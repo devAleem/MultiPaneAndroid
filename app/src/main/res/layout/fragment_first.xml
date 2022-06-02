@@ -57,20 +57,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:padding="8dp"
-                android:text="Default"
-                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Default">
+                app:layout_constraintTop_toTopOf="parent">
 
-            </TextView>
+            </androidx.recyclerview.widget.RecyclerView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
