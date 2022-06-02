@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aleem.multipane.databinding.FragmentFirstBinding
 
@@ -16,6 +17,7 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private lateinit var categoryAdapter:CategoryAdapter
+    private lateinit var itemAdapter: ItemAdapter
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -28,6 +30,7 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
 
          categoryAdapter=CategoryAdapter()
+         itemAdapter = ItemAdapter()
 
         return binding.root
 
@@ -39,6 +42,8 @@ class FirstFragment : Fragment() {
         binding.rvCategory.layoutManager = LinearLayoutManager(context)
         binding.rvCategory.adapter = categoryAdapter
 
+        binding.rvGrid.layoutManager = GridLayoutManager(context,4,)
+        binding.rvGrid.adapter = itemAdapter
 
     }
 
