@@ -22,7 +22,7 @@ interface OnItemClickListener{
 
 class ItemAdapter:RecyclerView.Adapter<ItemViewHolder>() {
     private lateinit var listener: OnItemClickListener
-    val itemList = listOf(
+    var itemList = listOf(
         ItemName("Chicken"),
         ItemName("Biryani"),
         ItemName("Salad"),
@@ -42,6 +42,10 @@ class ItemAdapter:RecyclerView.Adapter<ItemViewHolder>() {
     fun setOnItemClickListener(mListener: OnItemClickListener){
         Log.i("MLait","here")
         listener = mListener
+    }
+    fun setList(list:List<ItemName>){
+        itemList = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {

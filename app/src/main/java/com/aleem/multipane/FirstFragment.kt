@@ -46,6 +46,12 @@ class FirstFragment : Fragment() {
         binding.rvCategory.layoutManager = LinearLayoutManager(context)
         binding.rvCategory.adapter = categoryAdapter
 
+        categoryAdapter.setOnCategoryClickListener(object :OnCategoryClickListener{
+            override fun onItemClick(position: Int) {
+               val list = DataHolder.data[position + 1]
+                itemAdapter.setList(list!!)
+            }
+        })
         binding.rvGrid.layoutManager = GridLayoutManager(context,4,)
         binding.rvGrid.adapter = itemAdapter
 
