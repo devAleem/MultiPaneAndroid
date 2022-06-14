@@ -22,6 +22,7 @@ class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private lateinit var categoryAdapter:CategoryAdapter
     private lateinit var itemAdapter: ItemAdapter
+    private lateinit var itemListAdapter: ItemListAdapter
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -35,6 +36,7 @@ class FirstFragment : Fragment() {
 
          categoryAdapter=CategoryAdapter()
          itemAdapter = ItemAdapter()
+         itemListAdapter = ItemListAdapter()
 
         return binding.root
 
@@ -45,6 +47,9 @@ class FirstFragment : Fragment() {
 
         binding.rvCategory.layoutManager = LinearLayoutManager(context)
         binding.rvCategory.adapter = categoryAdapter
+
+        binding.rvItemAddedList.layoutManager = LinearLayoutManager(context)
+        binding.rvItemAddedList.adapter = itemListAdapter
 
         categoryAdapter.setOnCategoryClickListener(object :OnCategoryClickListener{
             override fun onItemClick(position: Int) {
@@ -62,6 +67,7 @@ class FirstFragment : Fragment() {
                 tvItem.setTextColor(Color.parseColor("#ffffff"))
                 tvPrice.setTextColor(Color.parseColor("#ffffff"))
                 view.setBackgroundColor(Color.parseColor("#F9C944"))
+                itemListAdapter.setItemAddedList(ItemAddedList("chicken",1,350))
             }
 
         })
