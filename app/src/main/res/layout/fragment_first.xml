@@ -20,6 +20,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItemAddedList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@id/dividerGuideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
     <FrameLayout
         android:id="@+id/flButton"
         android:layout_width="0dp"
