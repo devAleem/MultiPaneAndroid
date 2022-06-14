@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ItemViewHolder(itemView: View,listener: OnItemClickListener):RecyclerView.ViewHolder(itemView){
     val tvItem = itemView.findViewById<TextView>(R.id.tvItemName)
+    val tvPrice = itemView.findViewById<TextView>(R.id.tvItemPrice)
     init {
         itemView.setOnClickListener {
             listener.onItemClick(adapterPosition,it)
@@ -23,20 +24,20 @@ interface OnItemClickListener{
 class ItemAdapter:RecyclerView.Adapter<ItemViewHolder>() {
     private lateinit var listener: OnItemClickListener
     var itemList = listOf(
-        ItemName("Chicken"),
-        ItemName("Biryani"),
-        ItemName("Salad"),
-        ItemName("pizza "),
-        ItemName("Shawarma"),
-        ItemName("Raita"),
-        ItemName("Russian Salad"),
-        ItemName("Banu Pulao"),
-        ItemName("Chicken karahi"),
-        ItemName("Mutton Karahi"),
-        ItemName("Beef Tika"),
-        ItemName("Chicken Tika"),
-        ItemName("Mutton Tika"),
-        ItemName("Beef Pulao"),
+        ItemName("Chicken","900"),
+        ItemName("Biryani","900"),
+        ItemName("Salad","900"),
+        ItemName("pizza ","900"),
+        ItemName("Shawarma","900"),
+        ItemName("Raita","900"),
+        ItemName("Russian Salad","900"),
+        ItemName("Banu Pulao","900"),
+        ItemName("Chicken karahi","900"),
+        ItemName("Mutton Karahi","900"),
+        ItemName("Beef Tika","900"),
+        ItemName("Chicken Tika","900"),
+        ItemName("Mutton Tika","900"),
+        ItemName("Beef Pulao","900"),
     )
 
     fun setOnItemClickListener(mListener: OnItemClickListener){
@@ -58,6 +59,7 @@ class ItemAdapter:RecyclerView.Adapter<ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = itemList[position]
         holder.tvItem.text = item.itemName
+        holder.tvPrice.text = "Rs: ${item.itemPrice}"
     }
 
     override fun getItemCount() = itemList.size
