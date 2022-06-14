@@ -57,9 +57,11 @@ class FirstFragment : Fragment() {
 
         itemAdapter.setOnItemClickListener(object :OnItemClickListener{
             override fun onItemClick(position: Int,view: View) {
-                val tv = view.findViewById(R.id.tvItemName) as TextView
-                tv.setTextColor(Color.parseColor("#fd00ab"))
-                tv.setBackgroundColor(Color.parseColor("#1400fd"))
+                val tvItem = view.findViewById(R.id.tvItemName) as TextView
+                val tvPrice = view.findViewById<TextView>(R.id.tvItemPrice)
+                tvItem.setTextColor(Color.parseColor("#ffffff"))
+                tvPrice.setTextColor(Color.parseColor("#ffffff"))
+                view.setBackgroundColor(Color.parseColor("#F9C944"))
             }
 
         })
