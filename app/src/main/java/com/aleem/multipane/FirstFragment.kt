@@ -67,7 +67,7 @@ class FirstFragment : Fragment() {
                 tvItem.setTextColor(Color.parseColor("#ffffff"))
                 tvPrice.setTextColor(Color.parseColor("#ffffff"))
                 view.setBackgroundColor(Color.parseColor("#F9C944"))
-                itemListAdapter.setItemAddedList(ItemAddedList("chicken",1,350))
+                itemListAdapter.setItemAddedList(ItemAddedList("chicken",(position + 1).toString(),"350"))
             }
 
         })
