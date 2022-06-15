@@ -9,15 +9,15 @@
         android:id="@+id/tvSrNumber"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:minWidth="50dp"
-        android:gravity="center"
-        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:text="1"
         android:background="#F2F4F7"
-        tools:text="1" />
+        android:text="No"/>
 
     <TextView
         android:id="@+id/tvItem"
@@ -25,12 +25,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvSrNumber"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvSrNumber"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Chicken Sandwich"
-
-        android:minWidth="100dp"/>
+        android:minWidth="100dp"
+        android:text="Item"/>
 
     <TextView
         android:id="@+id/tvItemQuantity"
@@ -41,18 +40,20 @@
         app:layout_constraintStart_toEndOf="@+id/tvItem"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Chicken Sandwich"
-        android:minWidth="50dp"/>
+        android:minWidth="50dp"
+        android:text="Qty"/>
 
     <TextView
         android:id="@+id/tvItemEach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="550"
-        android:minWidth="50dp"
+        android:text="Each"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvItemTotal"
         app:layout_constraintStart_toEndOf="@+id/tvItemQuantity"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:minWidth="50dp"
+        />
 
     <TextView
         android:id="@+id/tvItemTotal"
@@ -60,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="TextView"
         android:minWidth="50dp"
+        android:text="Total"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvItemEach"
